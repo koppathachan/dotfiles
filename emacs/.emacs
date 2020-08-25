@@ -2,6 +2,14 @@
 ;;; Commentary:
 ;;  Just my Emacs setup.
 
+;; Do not show the startup screen.
+(setq inhibit-startup-message t)
+
+;; Disable tool bar, menu bar, scroll bar.
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+
 (require 'package)
 
 ;;; Code:
@@ -29,13 +37,40 @@
  '(inhibit-startup-screen t)
  '(js-indent-level 2)
  '(package-selected-packages
-   '(xref-js2 js2-refactor js2-mode js-mode flycheck swiper ivy magit projectile use-package)))
+   '(go-mode xref-js2 js2-refactor js2-mode js-mode flycheck swiper ivy magit projectile use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(use-package go-mode
+  :config
+  (add-hook 'before-save-hook #'gofmt-before-save)
+  :ensure t)
+
+;; This package requires eslint to be installed globally.
+(use-package flycheck
+  :ensure t
+  :config
+  (flycheck-add-mode 'javascript-eslint 'js-mode)
+  :init
+  (global-flycheck-mode))
+
+(use-package company
+  :bind (:map company-active-map
+         ("C-n" . company-select-next)
+         ("C-p" . company-select-previous))
+  :config
+  (setq company-idle-delay 0.3)
+  (global-company-mode t))
+
+(use-package tide
+  :ensure t
+  :after (typescript-mode company flycheck)
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . tide-hl-identifier-mode)
+         (before-save . tide-format-before-save)))
 
 ;;(use-package evil)
 (use-package js2-mode
@@ -62,14 +97,9 @@
 (use-package swiper
   :ensure t
   :config
-  (global-set-key "\C-s" 'swiper))
-;; This package requires eslint to be installed globally.
-(use-package flycheck
-  :ensure t
-  :config
-  (flycheck-add-mode 'javascript-eslint 'js-mode)
-  :init
-  (global-flycheck-mode))
+  (global-set-key "\C-s" 'swiper)
+  (global-set-key "\C-r" 'swiper-backward))
+
 ;; use eslint with web-mode for jsx files
 
 
@@ -77,8 +107,8 @@
   :ensure t
   :config
   (setq projectile-completion-system 'ivy)
-  (global-set-key "\C-x\C-f" 'projectile-find-file)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (global-set-key "\C-x\C-f" 'projectile-find-file)
   (projectile-mode +1))
 
 (global-display-line-numbers-mode)
