@@ -45,6 +45,10 @@
  ;; If there is more than one, they won't work right.
  )
 (use-package go-mode
+  :init
+  (add-hook 'go-mode-hook
+      (lambda ()
+        (setq tab-width 4)))
   :config
   (add-hook 'before-save-hook #'gofmt-before-save)
   :ensure t)
@@ -56,6 +60,14 @@
   (flycheck-add-mode 'javascript-eslint 'js-mode)
   :init
   (global-flycheck-mode))
+
+(add-to-list 'display-buffer-alist
+             `(,(rx bos "*Flycheck errors*" eos)
+              (display-buffer-reuse-window
+               display-buffer-in-side-window)
+              (side            . bottom)
+              (reusable-frames . visible)
+              (window-height   . 0.33)))
 
 (use-package company
   :bind (:map company-active-map
@@ -91,6 +103,7 @@
 (use-package xref-js2
   :ensure t)
 (use-package magit
+  :bind ("C-x g" . magit-status)
   :ensure t)
 (use-package ivy
   :ensure t)
