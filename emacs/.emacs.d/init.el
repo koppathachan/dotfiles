@@ -47,7 +47,8 @@
 (global-display-line-numbers-mode)
 
 ;;(server-start)
-
+(use-package typescript-mode
+  :ensure t)
 (use-package go-mode
   :init
   (add-hook 'go-mode-hook
@@ -77,16 +78,21 @@
               (window-height   . 0.33)))
 
 (use-package company
+  :ensure t
+  :init
+  (setq company-idle-delay nil  ; avoid auto completion popup, use TAB
+                                ; to show it
+        company-tooltip-align-annotations t)
+  :hook (after-init . global-company-mode)
   :bind (:map company-active-map
          ("C-n" . company-select-next)
          ("C-p" . company-select-previous))
   :config
-  (setq company-idle-delay 0.3)
-  (global-company-mode t))
+  (setq company-idle-delay 0))
 
 (use-package tide
   :ensure t
-  :after (typescript-mode company flycheck)
+  :after typescript-mode
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
          (before-save . tide-format-before-save)))
