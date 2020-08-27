@@ -48,7 +48,7 @@
 
 (global-display-line-numbers-mode)
 
-(server-start)
+;;(server-start)
 
 (use-package go-mode
   :init
