@@ -36,9 +36,7 @@
    [default default default italic underline success warning error])
  '(custom-enabled-themes '(misterioso))
  '(inhibit-startup-screen t)
- '(js-indent-level 2)
- '(package-selected-packages
-   '(ripgrep xref-js2 use-package tide tern swiper projectile magit js2-refactor go-mode)))
+ '(js-indent-level 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
