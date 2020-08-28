@@ -46,6 +46,10 @@
 
 (global-display-line-numbers-mode)
 
+(use-package exec-path-from-shell
+  :ensure t)
+(exec-path-from-shell-initialize)
+
 ;;(server-start)
 (use-package typescript-mode
   :ensure t)
@@ -85,6 +89,7 @@
         company-tooltip-align-annotations t)
   :hook (after-init . global-company-mode)
   :bind (:map company-active-map
+	 ("<return>" . nil)
          ("C-n" . company-select-next)
          ("C-p" . company-select-previous))
   :config
