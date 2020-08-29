@@ -36,7 +36,9 @@
    [default default default italic underline success warning error])
  '(custom-enabled-themes '(misterioso))
  '(inhibit-startup-screen t)
- '(js-indent-level 2))
+ '(js-indent-level 2)
+ '(package-selected-packages
+   '(hindent haskell-mode exec-path-from-shell xref-js2 use-package tide tern swiper ripgrep projectile magit js2-refactor go-mode company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -49,6 +51,11 @@
 (use-package exec-path-from-shell
   :ensure t)
 (exec-path-from-shell-initialize)
+
+(use-package haskell-mode
+  :ensure t)
+(use-package hindent
+  :ensure t)
 
 ;;(server-start)
 (use-package typescript-mode
