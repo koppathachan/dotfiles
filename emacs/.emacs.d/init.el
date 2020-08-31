@@ -5,6 +5,10 @@
 ;;; Code:
 
 (setq inhibit-startup-message t)
+(setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
+(setq auto-save-default t)
+(setq auto-save-visited-mode t)
+(setq create-lockfiles nil)
 
 ;; Disable tool bar, menu bar, scroll bar.
 (tool-bar-mode -1)
@@ -38,7 +42,7 @@
  '(inhibit-startup-screen t)
  '(js-indent-level 2)
  '(package-selected-packages
-   '(hindent haskell-mode exec-path-from-shell xref-js2 use-package tide tern swiper ripgrep projectile magit js2-refactor go-mode company)))
+   '(ivy js2-mode flycheck typescript-mode hindent haskell-mode exec-path-from-shell xref-js2 use-package tide tern swiper ripgrep projectile magit js2-refactor go-mode company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -96,7 +100,7 @@
         company-tooltip-align-annotations t)
   :hook (after-init . global-company-mode)
   :bind (:map company-active-map
-	 ("<return>" . nil)
+	 ("<return>" . "")
          ("C-n" . company-select-next)
          ("C-p" . company-select-previous))
   :config
