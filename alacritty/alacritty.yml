@@ -3,48 +3,36 @@
 background_opacity: 0.9
 colors:
   draw_bold_text_with_bright_colors: true
-  # Default colours
+  # Default colors
   primary:
-    background: '0x000b1e'
-    foreground: '0x0abdc6'
-
-  # Colors that should be used to draw the terminal cursor. If these are unset,
-  # the cursor colour will be the inverse of the cell colour.
-  # cursor:
-  #   text: '0x2e2e2d'
-  #   # text: '0x000000'
-  #   cursor: '0xffffff'
+    background: '0x0A0E14'
+    foreground: '0xB3B1AD'
 
   # Normal colors
   normal:
-    black:   '0x123e7c'
-    red:     '0xff0000'
-    green:   '0xd300c4'
-    yellow:  '0xf57800'
-    blue:    '0x123e7c'
-    magenta: '0x711c91'
-    cyan:    '0x0abdc6'
-    white:   '0xd7d7d5'
+    black: '0x01060E'
+    red: '0xEA6C73'
+    green: '0x91B362'
+    yellow: '0xF9AF4F'
+    blue: '0x53BDFA'
+    magenta: '0xFAE994'
+    cyan: '0x90E1C6'
+    white: '0xC7C7C7'
 
   # Bright colors
   bright:
-    black:   '0x1c61c2'
-    red:     '0xff0000'
-    green:   '0xd300c4'
-    yellow:  '0xf57800'
-    blue:    '0x00ff00'
-    magenta: '0x711c91'
-    cyan:    '0x0abdc6'
-    white:   '0xd7d7d5'
-
-  # dim colors
-  dim:
-    black:   '0x1c61c2'
-    red:     '0xff0000'
-    green:   '0xd300c4'
-    yellow:  '0xf57800'
-    blue:    '0x123e7c'
-    magenta: '0x711c91'
-    cyan:    '0x0abdc6'
-    white:   '0xd7d7d5'
-
+    black: '0x686868'
+    red: '0xF07178'
+    green: '0xC2D94C'
+    yellow: '0xFFB454'
+    blue: '0x59C2FF'
+    magenta: '0xFFEE99'
+    cyan: '0x95E6CB'
+    white: '0xFFFFFF'
+font:
+  scale_with_dpi: true
+  use_thin_strokes: true
+  size: 9.5
+  offset:
+    x: 0
+    y: 0
