@@ -111,3 +111,4 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:/usr/local/go/bin:/home/sasidakh/go/bin
 export GO111MODULE="on"
 export EDITOR="emacs -nw"
+fpath+=${ZDOTDIR:-~}/.zsh_functions
