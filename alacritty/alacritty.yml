@@ -1,6 +1,6 @@
 # Cyberpunk-Neon
 #
-background_opacity: 0.9
+background_opacity: 0.97
 colors:
   draw_bold_text_with_bright_colors: true
   # Default colors
@@ -32,7 +32,7 @@ colors:
 font:
   scale_with_dpi: true
   use_thin_strokes: true
-  size: 9.5
+  size: 8.0
   offset:
     x: 0
     y: 0
