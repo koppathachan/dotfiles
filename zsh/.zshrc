@@ -73,6 +73,8 @@ ZSH_THEME="avit"
 plugins=(
     git
     docker
+    golang
+    history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
