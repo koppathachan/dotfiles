@@ -1,0 +1,32 @@
+[username]
+show_always = true
+format = "🌻 [$user]($style)"
+
+[hostname]
+format = "@[$hostname]($style):"
+ssh_only = false
+
+[directory]
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[git_branch]
+format = "\n[$symbol$branch]($style) "
+symbol = "🌱 "
+
+[character]
+format = "$symbol"
+success_symbol = "[🟢](bold green) "
+error_symbol = "[🔴](bold red) "
+
+[aws]
+disabled = true
+
+# [git_commit]
+# disabled = true
+
+[package]
+format  = "pkg: [$version]($style) "
+
+[nodejs]
+format = "using [NodeJS-($version )]($style)"
