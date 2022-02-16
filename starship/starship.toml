@@ -42,7 +42,7 @@ truncation_symbol = "…/"
 truncate_to_repo = false
 
 [git_branch]
-format = "\n[$symbol$branch]($style) "
+format = "[$symbol$branch]($style) "
 symbol = "🌱 "
 
 [character]
@@ -57,10 +57,10 @@ disabled = true
 # disabled = true
 
 [package]
-format  = "pkg: [$version]($style) "
+format  = "\n$symbol [$version]($style) ➡ "
 
 [nodejs]
-format = "using [NodeJS-($version )]($style)"
+format = "[NodeJS-($version )]($style)"
 
 [docker_context]
 format = "via [🐋 $context](blue bold)"
