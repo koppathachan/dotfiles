@@ -8,20 +8,6 @@ $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
-$docker_context\
-$package\
-$cmake\
-$dart\
-$deno\
-$golang\
-$helm\
-$nodejs\
-$python\
-$rlang\
-$rust\
-$swift\
-$terraform\
-$aws\
 $sudo\
 $cmd_duration\
 $line_break\
@@ -42,25 +28,10 @@ truncation_symbol = "…/"
 truncate_to_repo = false
 
 [git_branch]
-format = "[$symbol$branch]($style) "
+format = "\n[$symbol$branch]($style) "
 symbol = "🌱 "
 
 [character]
 format = "$symbol"
 success_symbol = "[🟢](bold green) "
 error_symbol = "[🔴](bold red) "
-
-[aws]
-disabled = true
-
-# [git_commit]
-# disabled = true
-
-[package]
-format  = "\n$symbol [$version]($style) ➡ "
-
-[nodejs]
-format = "[NodeJS-($version )]($style)"
-
-[docker_context]
-format = "via [🐋 $context](blue bold)"
