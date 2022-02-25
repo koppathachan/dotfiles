@@ -8,7 +8,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="avit"
+# ZSH_THEME="avit"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -105,6 +105,13 @@ ZSH_THEME="avit"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias history="history 1"
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY
+
 eval "$(starship init zsh)"
 
 
@@ -117,3 +124,4 @@ export PATH=$PATH:/usr/local/go/bin:/home/sasidakh/go/bin
 export GO111MODULE="on"
 export EDITOR="emacs -nw"
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
