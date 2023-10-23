@@ -10,7 +10,6 @@ env:
 
 font:
   scale_with_dpi: true
-  use_thin_strokes: true
   size: 9.5
 
 # Colors (Solarized Dark)
